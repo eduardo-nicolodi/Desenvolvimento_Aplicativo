@@ -12,31 +12,26 @@ public class Ex1 {
 
     public static void main(String[] args) {
         Scanner ler = new Scanner(System.in);
-        int num;
-        int x;
+        int num, x, i, contar = 0,soma = 0;
         
         ArrayList<Integer> lista = new ArrayList<>();
         
-        System.out.println("Digite quantos números você quiser armazenar, para finalizar o armazenamento digite zero.");
-        System.out.println("------------------------------------------------------------------------------------------");
+        System.out.println("Digite a quantidade de números você quer armazenar:");
+        i = ler.nextInt();
+        
+        System.out.println("---------------------------------------------------");
         
         do{
           System.out.println("Digite um número: ");
           num = ler.nextInt();
-         
           lista.add(num);
-        }while(num != 0);
+          
+        }while(lista.size() < i);
         
-        System.out.println("------------------------------------------------------------------------");
-        
-        System.out.println("Finalizando o Armazenamento finalizado.");
-        
-        System.out.println("------------------------------------------------------------------------");
+        System.out.println("------------------------------------------------------------");
         
         System.out.println("Escolha um número para saber quantas vezes ele foi digitado.");
         x = ler.nextInt();
-        
-        int contar = 0;
         
         for (int numero : lista){
             if(numero == x){
@@ -45,24 +40,17 @@ public class Ex1 {
             
         }
         
-        
-        System.out.println("------------------------------------------------------------------------");
-
-        System.out.println("Encerrando o programa...");
-        System.out.println("------------------------------------------------------------------------");
-        
-        int ultimo = lista.size();
-        lista.remove(ultimo - 1);
-        System.out.println("Lista deos números armazenados " + lista);
-        
-        int soma = 0;  
         for(int numero : lista){
             soma += numero;            
         }
-        System.out.println("A soma dos números armazenados é: " + soma);
         
+        System.out.println("------------------------------------------------------------");
+        System.out.println("Encerrando o programa...");
+        System.out.println("------------------------------------------------------------");
+        
+        System.out.println("Lista deos números armazenados " + lista);
+        System.out.println("A soma dos números armazenados é: " + soma);
         System.out.println("A quantidade dos números armazenados é: " + lista.size());
-    
         System.out.println("A quantidade de vezes que o número escolhido apareceu foi: " + contar );
     }
     
